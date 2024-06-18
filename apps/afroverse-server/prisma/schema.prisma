@@ -1,0 +1,90 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Investment {
+  amount      Float?
+  createdAt   DateTime @default(now())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  investor    String?
+  reward      Json?
+  tokenStaked Int?
+  updatedAt   DateTime @updatedAt
+}
+
+model MusicChallenge {
+  createdAt       DateTime       @default(now())
+  description     String?
+  id              String         @id @default(auto()) @map("_id") @db.ObjectId
+  rewards         Json?
+  title           String?
+  updatedAt       DateTime       @updatedAt
+  virtualArtist   VirtualArtist? @relation(fields: [virtualArtistId], references: [id])
+  virtualArtistId String?        @db.ObjectId
+}
+
+model RecordLabel {
+  analytics       Json?
+  createdAt       DateTime       @default(now())
+  id              String         @id @default(auto()) @map("_id") @db.ObjectId
+  name            String?
+  promotions      Json?
+  updatedAt       DateTime       @updatedAt
+  virtualArtist   VirtualArtist? @relation(fields: [virtualArtistId], references: [id])
+  virtualArtistId String?        @db.ObjectId
+}
+
+model VirtualArtist {
+  aiStudios            AiStudio[]
+  createdAt            DateTime                @default(now())
+  description          String?
+  genre                EnumVirtualArtistGenre?
+  id                   String                  @id @default(auto()) @map("_id") @db.ObjectId
+  musicChallenges      MusicChallenge[]
+  name                 String?
+  recordLabels         RecordLabel[]
+  updatedAt            DateTime                @updatedAt
+  voiceCustomization   VoiceCustomization?     @relation(fields: [voiceCustomizationId], references: [id])
+  voiceCustomizationId String?                 @db.ObjectId
+}
+
+model AiStudio {
+  composition     Json?
+  createdAt       DateTime       @default(now())
+  id              String         @id @default(auto()) @map("_id") @db.ObjectId
+  mixing          Json?
+  production      Json?
+  updatedAt       DateTime       @updatedAt
+  virtualArtist   VirtualArtist? @relation(fields: [virtualArtistId], references: [id])
+  virtualArtistId String?        @db.ObjectId
+}
+
+model VoiceCustomization {
+  aiGeneratedVoice Json?
+  createdAt        DateTime        @default(now())
+  id               String          @id @default(auto()) @map("_id") @db.ObjectId
+  updatedAt        DateTime        @updatedAt
+  virtualArtists   VirtualArtist[]
+  voiceClonedFrom  String?
+}
+
+model User {
+  createdAt DateTime @default(now())
+  email     String?  @unique
+  firstName String?
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+enum EnumVirtualArtistGenre {
+  Option1
+}

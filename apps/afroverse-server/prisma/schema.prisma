@@ -39,6 +39,17 @@ model RecordLabel {
   virtualArtistId String?        @db.ObjectId
 }
 
+model AiStudio {
+  composition     Json?
+  createdAt       DateTime       @default(now())
+  id              String         @id @default(auto()) @map("_id") @db.ObjectId
+  mixing          Json?
+  production      Json?
+  updatedAt       DateTime       @updatedAt
+  virtualArtist   VirtualArtist? @relation(fields: [virtualArtistId], references: [id])
+  virtualArtistId String?        @db.ObjectId
+}
+
 model VirtualArtist {
   aiStudios            AiStudio[]
   createdAt            DateTime                @default(now())
@@ -51,17 +62,6 @@ model VirtualArtist {
   updatedAt            DateTime                @updatedAt
   voiceCustomization   VoiceCustomization?     @relation(fields: [voiceCustomizationId], references: [id])
   voiceCustomizationId String?                 @db.ObjectId
-}
-
-model AiStudio {
-  composition     Json?
-  createdAt       DateTime       @default(now())
-  id              String         @id @default(auto()) @map("_id") @db.ObjectId
-  mixing          Json?
-  production      Json?
-  updatedAt       DateTime       @updatedAt
-  virtualArtist   VirtualArtist? @relation(fields: [virtualArtistId], references: [id])
-  virtualArtistId String?        @db.ObjectId
 }
 
 model VoiceCustomization {

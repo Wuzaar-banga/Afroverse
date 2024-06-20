@@ -91,61 +91,61 @@
   },
   {
     "role": "user",
-    "resource": "VirtualArtist",
+    "resource": "AiStudio",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "VirtualArtist",
+    "resource": "AiStudio",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "VirtualArtist",
+    "resource": "AiStudio",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "VirtualArtist",
+    "resource": "AiStudio",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "VirtualArtist",
+    "resource": "AiStudio",
     "action": "read:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "AiStudio",
+    "resource": "VirtualArtist",
     "action": "read:own",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "AiStudio",
+    "resource": "VirtualArtist",
     "action": "create:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "AiStudio",
+    "resource": "VirtualArtist",
     "action": "update:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "AiStudio",
+    "resource": "VirtualArtist",
     "action": "delete:any",
     "attributes": "*"
   },
   {
     "role": "user",
-    "resource": "AiStudio",
+    "resource": "VirtualArtist",
     "action": "read:any",
     "attributes": "*"
   },

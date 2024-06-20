@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+                 package recordLabel;
+service RecordLabelService {
+ rpc createRecordLabel (RecordLabelCreateInput) returns (RecordLabel) {}
+rpc recordLabels (findManyParams) returns (stream RecordLabel) {}
+rpc recordLabel (RecordLabelWhereUniqueInput) returns (RecordLabel) {}
+rpc updateRecordLabel (RecordLabelUpdateInput) returns (RecordLabel) {}
+rpc deleteRecordLabel (RecordLabelWhereUniqueInput) returns (RecordLabel) {} 
+ }
+message RecordLabelCreateInput {
+string analytics = 1;
+string createdAt = 2;
+string id = 3;
+string name = 4;
+string promotions = 5;
+string updatedAt = 6;
+};
+message RecordLabel {
+string analytics = 1;
+string createdAt = 2;
+string id = 3;
+string name = 4;
+string promotions = 5;
+string updatedAt = 6;
+};
+message RecordLabelWhereUniqueInput {
+string analytics = 1;
+string createdAt = 2;
+string id = 3;
+string name = 4;
+string promotions = 5;
+string updatedAt = 6;
+};
+message RecordLabelUpdateInput {
+string analytics = 1;
+string createdAt = 2;
+string id = 3;
+string name = 4;
+string promotions = 5;
+string updatedAt = 6;
+};
+message findManyParams {
+
+};

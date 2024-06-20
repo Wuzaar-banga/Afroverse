@@ -1,0 +1,129 @@
+syntax = "proto3";
+
+                 package virtualArtist;
+service VirtualArtistService {
+ rpc createVirtualArtist (VirtualArtistCreateInput) returns (VirtualArtist) {}
+rpc virtualArtists (findManyParams) returns (stream VirtualArtist) {}
+rpc virtualArtist (VirtualArtistWhereUniqueInput) returns (VirtualArtist) {}
+rpc updateVirtualArtist (VirtualArtistUpdateInput) returns (VirtualArtist) {}
+rpc deleteVirtualArtist (VirtualArtistWhereUniqueInput) returns (VirtualArtist) {}
+rpc findManyVirtualArtist (VirtualArtistWhereUniqueInput) returns (stream AiStudio) {}
+rpc updateVirtualArtist (AiStudioParams) returns (stream AiStudio) {}
+rpc connectVirtualArtist (AiStudioParams) returns (AiStudio) {}
+rpc disconnectVirtualArtist (AiStudioParams) returns (AiStudio) {}
+rpc findManyVirtualArtist (VirtualArtistWhereUniqueInput) returns (stream MusicChallenge) {}
+rpc updateVirtualArtist (MusicChallengeParams) returns (stream MusicChallenge) {}
+rpc connectVirtualArtist (MusicChallengeParams) returns (MusicChallenge) {}
+rpc disconnectVirtualArtist (MusicChallengeParams) returns (MusicChallenge) {}
+rpc findManyVirtualArtist (VirtualArtistWhereUniqueInput) returns (stream RecordLabel) {}
+rpc updateVirtualArtist (RecordLabelParams) returns (stream RecordLabel) {}
+rpc connectVirtualArtist (RecordLabelParams) returns (RecordLabel) {}
+rpc disconnectVirtualArtist (RecordLabelParams) returns (RecordLabel) {} 
+ }
+message VirtualArtistCreateInput {
+repeated AiStudio aiStudios = 1;
+string createdAt = 2;
+string description = 3;
+repeated string genre = 4;
+string id = 5;
+repeated MusicChallenge musicChallenges = 6;
+string name = 7;
+repeated RecordLabel recordLabels = 8;
+string updatedAt = 9;
+};
+message VirtualArtist {
+repeated AiStudio aiStudios = 1;
+string createdAt = 2;
+string description = 3;
+repeated string genre = 4;
+string id = 5;
+repeated MusicChallenge musicChallenges = 6;
+string name = 7;
+repeated RecordLabel recordLabels = 8;
+string updatedAt = 9;
+};
+message VirtualArtistWhereUniqueInput {
+repeated AiStudio aiStudios = 1;
+string createdAt = 2;
+string description = 3;
+repeated string genre = 4;
+string id = 5;
+repeated MusicChallenge musicChallenges = 6;
+string name = 7;
+repeated RecordLabel recordLabels = 8;
+string updatedAt = 9;
+};
+message VirtualArtistUpdateInput {
+repeated AiStudio aiStudios = 1;
+string createdAt = 2;
+string description = 3;
+repeated string genre = 4;
+string id = 5;
+repeated MusicChallenge musicChallenges = 6;
+string name = 7;
+repeated RecordLabel recordLabels = 8;
+string updatedAt = 9;
+};
+message findManyParams {
+
+};
+message AiStudio {
+string composition = 1;
+string createdAt = 2;
+string id = 3;
+string mixing = 4;
+string production = 5;
+string updatedAt = 6;
+};
+message AiStudioWhereUniqueInput {
+string composition = 1;
+string createdAt = 2;
+string id = 3;
+string mixing = 4;
+string production = 5;
+string updatedAt = 6;
+};
+message AiStudioParams {
+VirtualArtistWhereUniqueInput virtualArtistWhereUniqueInput = 1;
+AiStudioWhereUniqueInput aistudioWhereUniqueInput = 2;
+};
+message MusicChallenge {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string rewards = 4;
+string title = 5;
+string updatedAt = 6;
+};
+message MusicChallengeWhereUniqueInput {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string rewards = 4;
+string title = 5;
+string updatedAt = 6;
+};
+message MusicChallengeParams {
+VirtualArtistWhereUniqueInput virtualArtistWhereUniqueInput = 1;
+MusicChallengeWhereUniqueInput musicchallengeWhereUniqueInput = 2;
+};
+message RecordLabel {
+string analytics = 1;
+string createdAt = 2;
+string id = 3;
+string name = 4;
+string promotions = 5;
+string updatedAt = 6;
+};
+message RecordLabelWhereUniqueInput {
+string analytics = 1;
+string createdAt = 2;
+string id = 3;
+string name = 4;
+string promotions = 5;
+string updatedAt = 6;
+};
+message RecordLabelParams {
+VirtualArtistWhereUniqueInput virtualArtistWhereUniqueInput = 1;
+RecordLabelWhereUniqueInput recordlabelWhereUniqueInput = 2;
+};

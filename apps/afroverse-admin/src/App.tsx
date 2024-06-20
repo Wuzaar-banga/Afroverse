@@ -17,14 +17,14 @@ import { RecordLabelList } from "./recordLabel/RecordLabelList";
 import { RecordLabelCreate } from "./recordLabel/RecordLabelCreate";
 import { RecordLabelEdit } from "./recordLabel/RecordLabelEdit";
 import { RecordLabelShow } from "./recordLabel/RecordLabelShow";
-import { VirtualArtistList } from "./virtualArtist/VirtualArtistList";
-import { VirtualArtistCreate } from "./virtualArtist/VirtualArtistCreate";
-import { VirtualArtistEdit } from "./virtualArtist/VirtualArtistEdit";
-import { VirtualArtistShow } from "./virtualArtist/VirtualArtistShow";
 import { AiStudioList } from "./aiStudio/AiStudioList";
 import { AiStudioCreate } from "./aiStudio/AiStudioCreate";
 import { AiStudioEdit } from "./aiStudio/AiStudioEdit";
 import { AiStudioShow } from "./aiStudio/AiStudioShow";
+import { VirtualArtistList } from "./virtualArtist/VirtualArtistList";
+import { VirtualArtistCreate } from "./virtualArtist/VirtualArtistCreate";
+import { VirtualArtistEdit } from "./virtualArtist/VirtualArtistEdit";
+import { VirtualArtistShow } from "./virtualArtist/VirtualArtistShow";
 import { VoiceCustomizationList } from "./voiceCustomization/VoiceCustomizationList";
 import { VoiceCustomizationCreate } from "./voiceCustomization/VoiceCustomizationCreate";
 import { VoiceCustomizationEdit } from "./voiceCustomization/VoiceCustomizationEdit";
@@ -81,18 +81,18 @@ const App = (): React.ReactElement => {
           show={RecordLabelShow}
         />
         <Resource
-          name="VirtualArtist"
-          list={VirtualArtistList}
-          edit={VirtualArtistEdit}
-          create={VirtualArtistCreate}
-          show={VirtualArtistShow}
-        />
-        <Resource
           name="AiStudio"
           list={AiStudioList}
           edit={AiStudioEdit}
           create={AiStudioCreate}
           show={AiStudioShow}
+        />
+        <Resource
+          name="VirtualArtist"
+          list={VirtualArtistList}
+          edit={VirtualArtistEdit}
+          create={VirtualArtistCreate}
+          show={VirtualArtistShow}
         />
         <Resource
           name="VoiceCustomization"

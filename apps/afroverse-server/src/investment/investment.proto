@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+                 package investment;
+service InvestmentService {
+ rpc createInvestment (InvestmentCreateInput) returns (Investment) {}
+rpc investments (findManyParams) returns (stream Investment) {}
+rpc investment (InvestmentWhereUniqueInput) returns (Investment) {}
+rpc updateInvestment (InvestmentUpdateInput) returns (Investment) {}
+rpc deleteInvestment (InvestmentWhereUniqueInput) returns (Investment) {} 
+ }
+message InvestmentCreateInput {
+int32 amount = 1;
+string createdAt = 2;
+string id = 3;
+string investor = 4;
+string reward = 5;
+int32 tokenStaked = 6;
+string updatedAt = 7;
+};
+message Investment {
+int32 amount = 1;
+string createdAt = 2;
+string id = 3;
+string investor = 4;
+string reward = 5;
+int32 tokenStaked = 6;
+string updatedAt = 7;
+};
+message InvestmentWhereUniqueInput {
+int32 amount = 1;
+string createdAt = 2;
+string id = 3;
+string investor = 4;
+string reward = 5;
+int32 tokenStaked = 6;
+string updatedAt = 7;
+};
+message InvestmentUpdateInput {
+int32 amount = 1;
+string createdAt = 2;
+string id = 3;
+string investor = 4;
+string reward = 5;
+int32 tokenStaked = 6;
+string updatedAt = 7;
+};
+message findManyParams {
+
+};

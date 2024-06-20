@@ -2,8 +2,8 @@ import { Module } from "@nestjs/common";
 import { InvestmentModule } from "./investment/investment.module";
 import { MusicChallengeModule } from "./musicChallenge/musicChallenge.module";
 import { RecordLabelModule } from "./recordLabel/recordLabel.module";
-import { VirtualArtistModule } from "./virtualArtist/virtualArtist.module";
 import { AiStudioModule } from "./aiStudio/aiStudio.module";
+import { VirtualArtistModule } from "./virtualArtist/virtualArtist.module";
 import { VoiceCustomizationModule } from "./voiceCustomization/voiceCustomization.module";
 import { UserModule } from "./user/user.module";
 import { HealthModule } from "./health/health.module";
@@ -28,8 +28,8 @@ import { AuthModule } from "./auth/auth.module";
     InvestmentModule,
     MusicChallengeModule,
     RecordLabelModule,
-    VirtualArtistModule,
     AiStudioModule,
+    VirtualArtistModule,
     VoiceCustomizationModule,
     UserModule,
     HealthModule,

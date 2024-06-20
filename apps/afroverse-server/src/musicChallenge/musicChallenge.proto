@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+                 package musicChallenge;
+service MusicChallengeService {
+ rpc createMusicChallenge (MusicChallengeCreateInput) returns (MusicChallenge) {}
+rpc musicChallenges (findManyParams) returns (stream MusicChallenge) {}
+rpc musicChallenge (MusicChallengeWhereUniqueInput) returns (MusicChallenge) {}
+rpc updateMusicChallenge (MusicChallengeUpdateInput) returns (MusicChallenge) {}
+rpc deleteMusicChallenge (MusicChallengeWhereUniqueInput) returns (MusicChallenge) {} 
+ }
+message MusicChallengeCreateInput {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string rewards = 4;
+string title = 5;
+string updatedAt = 6;
+};
+message MusicChallenge {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string rewards = 4;
+string title = 5;
+string updatedAt = 6;
+};
+message MusicChallengeWhereUniqueInput {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string rewards = 4;
+string title = 5;
+string updatedAt = 6;
+};
+message MusicChallengeUpdateInput {
+string createdAt = 1;
+string description = 2;
+string id = 3;
+string rewards = 4;
+string title = 5;
+string updatedAt = 6;
+};
+message findManyParams {
+
+};

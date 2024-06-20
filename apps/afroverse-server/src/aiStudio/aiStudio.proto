@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+                 package aiStudio;
+service AiStudioService {
+ rpc createAiStudio (AiStudioCreateInput) returns (AiStudio) {}
+rpc aiStudios (findManyParams) returns (stream AiStudio) {}
+rpc aiStudio (AiStudioWhereUniqueInput) returns (AiStudio) {}
+rpc updateAiStudio (AiStudioUpdateInput) returns (AiStudio) {}
+rpc deleteAiStudio (AiStudioWhereUniqueInput) returns (AiStudio) {} 
+ }
+message AiStudioCreateInput {
+string composition = 1;
+string createdAt = 2;
+string id = 3;
+string mixing = 4;
+string production = 5;
+string updatedAt = 6;
+};
+message AiStudio {
+string composition = 1;
+string createdAt = 2;
+string id = 3;
+string mixing = 4;
+string production = 5;
+string updatedAt = 6;
+};
+message AiStudioWhereUniqueInput {
+string composition = 1;
+string createdAt = 2;
+string id = 3;
+string mixing = 4;
+string production = 5;
+string updatedAt = 6;
+};
+message AiStudioUpdateInput {
+string composition = 1;
+string createdAt = 2;
+string id = 3;
+string mixing = 4;
+string production = 5;
+string updatedAt = 6;
+};
+message findManyParams {
+
+};
